@@ -11,10 +11,11 @@ html {
   color: white;
 }
 
+/* Creates a fun background for the calculator */
 body {
   width: 100vw;
   height: 100vh;
-  background: url(./images/background.png) repeat,
+  background: url(../images/background.png) repeat,
     linear-gradient(210deg, #5a0273, #2d013a, rgba(0, 0, 0, 1));
   display: grid;
   place-content: center;
@@ -22,6 +23,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Creates the calculator */
 .container {
   background-color: #5a0273;
   padding: 1rem;
@@ -30,7 +32,7 @@ body {
   box-shadow: 0 0 1rem 0.3rem #1a0022;
 }
 
-/* header */
+/* Styles the results window */
 
 .header {
   margin-bottom: 1rem;
@@ -50,7 +52,7 @@ body {
   width: auto;
 }
 
-/* buttons */
+/* Styles the buttons */
 
 .row {
   display: flex;
