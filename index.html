@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/main.js" defer></script>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <main class="container">
+      <!-- results window -->
+      <div class="header">
+        <header>
+          <h1>Calculator</h1>
+        </header>
+        <section class="display">
+          <div class="previousValue"></div>
+          <input type="text" class="currentValue" value="0" readonly />
+        </section>
+      </div>
+
+      <!-- buttons -- first row -->
+      <div class="row">
+        <button class="clearEntry function">CE</button>
+        <button class="clear function">C</button>
+        <button class="delete function">
+          <i class="fa-solid fa-delete-left"></i>
+        </button>
+        <button class="operator divide function">
+          <i class="fa-solid fa-divide"></i>
+        </button>
+      </div>
+
+      <!-- buttons -- second row -->
+      <div class="row">
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="operator function">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- buttons -- third row -->
+      <div class="row">
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="operator function">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+      </div>
+
+      <!-- buttons -- fourth row -->
+      <div class="row">
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="operator function">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+
+      <!-- buttons -- fifth row -->
+      <div class="row">
+        <button class="signChange radius">+ / -</button>
+        <button class="number">0</button>
+        <button class="number"><i class="fa-solid fa-circle"></i></button>
+        <button class="operator function radius">
+          <i class="fa-solid fa-equals"></i>
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
