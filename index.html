@@ -11,7 +11,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/main.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.6.0/math.js"
+      integrity="sha512-RefYJFvLbj6WnGkdf40i7tlnvORh5VhCXuyaYRrj0hu5y0aHMCO1ROPLnRfMzbZ7SJqCYaQ92EAsGf9OyY9BNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer></script>
     <script src="js/main.js" defer></script>
+    <meta name="description" content="This is a simple calculator." />
     <title>Calculator</title>
   </head>
   <body>
@@ -22,19 +29,22 @@
       </header>
       <section class="display">
         <div class="previousValue"></div>
-        <input type="text" class="currentValue" value="0" readonly />
+        <input
+          type="text"
+          class="currentValue"
+          value="0"
+          readonly
+          aria-label="results" />
       </section>
 
       <!-- buttons -- first row -->
       <div class="row">
         <button class="clearEntry function">CE</button>
         <button class="clear function">C</button>
-        <button class="delete function">
+        <button class="delete function" aria-label="delete button">
           <i class="fa-solid fa-delete-left"></i>
         </button>
-        <button class="operator divide function">
-          <i class="fa-solid fa-divide"></i>
-        </button>
+        <button class="operator">/</button>
       </div>
 
       <!-- buttons -- second row -->
@@ -42,9 +52,7 @@
         <button class="number">7</button>
         <button class="number">8</button>
         <button class="number">9</button>
-        <button class="operator function">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+        <button class="operator">*</button>
       </div>
 
       <!-- buttons -- third row -->
@@ -52,9 +60,7 @@
         <button class="number">4</button>
         <button class="number">5</button>
         <button class="number">6</button>
-        <button class="operator function">
-          <i class="fa-solid fa-minus"></i>
-        </button>
+        <button class="operator">-</button>
       </div>
 
       <!-- buttons -- fourth row -->
@@ -62,17 +68,15 @@
         <button class="number">1</button>
         <button class="number">2</button>
         <button class="number">3</button>
-        <button class="operator function">
-          <i class="fa-solid fa-plus"></i>
-        </button>
+        <button class="operator">+</button>
       </div>
 
       <!-- buttons -- fifth row -->
       <div class="row">
         <button class="signChange radius">+ / -</button>
         <button class="number">0</button>
-        <button class="number"><i class="fa-solid fa-circle"></i></button>
-        <button class="operator function radius">
+        <button class="operator">.</button>
+        <button class="equals radius" aria-label="equals button">
           <i class="fa-solid fa-equals"></i>
         </button>
       </div>

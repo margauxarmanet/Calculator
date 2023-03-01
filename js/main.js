@@ -50,6 +50,35 @@ const initApp = () => {
   signChangeButton.addEventListener("click", () => {
     currentValueElement.value = parseFloat(currentValueElement.value) * -1; // parseFloat() turns the string into a number.
   });
+
+  // Adds the symbols ("+", "-", "*", "/" and ".") and don't repeat themselves.
+  const operatorButtons = document.querySelectorAll(".operator");
+  operatorButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const newOperatorInput = event.target.textContent;
+      const lastChar = currentValueElement.value.slice(-1);
+      if (
+        lastChar !== "+" &&
+        lastChar !== "-" &&
+        lastChar !== "*" &&
+        lastChar !== "/" &&
+        lastChar !== "."
+      )
+        currentValueElement.value += newOperatorInput;
+    });
+  });
+
+  // The equals button calculates and displays the result.
+  const equalsButton = document.querySelector(".equals");
+  equalsButton.addEventListener("click", () => {
+    const expression = currentValueElement.value;
+
+    /* Using the math.js library :
+    It takes the "expression" string and turns it into a math argument */
+    const result = math.evaluate(expression); // math.evaluate() is from the js library math.js
+    previousValueElement.textContent = expression + " =";
+    currentValueElement.value = result;
+  });
 };
 
 // Makes sure the page is fully loaded.
