@@ -21,12 +21,14 @@ const initApp = () => {
   });
 
   // The "delete button" removes the last character entry.
-  const deleteButton = document.querySelector(".delete");
-  deleteButton.addEventListener("click", () => {
+  const backspaceButton = document.querySelector(".backspace");
+  backspaceButton.addEventListener("click", () => {
     // if there is only one character left, it resets to 0.
     if (currentValueElement.value.length === 1) {
       currentValueElement.value = "0";
       // else it removes the last character entry.
+    } else if (currentValueElement.value === "You cannot divide by 0.") {
+      currentValueElement.value = "0";
     } else {
       currentValueElement.value = currentValueElement.value.slice(0, -1);
     }
@@ -72,6 +74,13 @@ const initApp = () => {
   const equalsButton = document.querySelector(".equals");
   equalsButton.addEventListener("click", () => {
     const expression = currentValueElement.value;
+
+    // Checks for division by zero.
+    if (expression.includes("/0") || expression.includes("0/")) {
+      currentValueElement.value = "You cannot divide by 0.";
+      previousValueElement.textContent = "";
+      return;
+    }
 
     /* Using the math.js library :
     It takes the "expression" string and turns it into a math argument */
