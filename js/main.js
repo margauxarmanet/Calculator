@@ -98,7 +98,7 @@ const initApp = () => {
   // The "signChange" Button turns + into - and vice-versa.
   const signChangeButton = document.querySelector(".signChange");
   signChangeButton.addEventListener("click", () => {
-    currentValueElement.value = parseFloat(currentValueElement.value) * -1; // parseFloat() turns the string into a number.
+    currentValueElement.value = parseFloat(currentValueElement.value) * -1;
   });
 
   // -------------------------------------------------------------------
@@ -162,8 +162,7 @@ const initApp = () => {
       return;
     }
 
-    /* Using the math.js library :
-    It takes the "expression" string and turns it into a math argument */
+    // Using the math.js library :
     const result = math.evaluate(expression); // math.evaluate() is from the js library math.js
     const formattedResult = parseFloat(result.toFixed(2)); // allows maximum 2 decimal places.
     previousValueElement.textContent = formattedResult + " =";
