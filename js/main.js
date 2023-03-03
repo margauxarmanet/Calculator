@@ -79,7 +79,12 @@ const initApp = () => {
 
   // The "CE" button resets the entry to 0.
   function clearEntry() {
-    currentValueElement.value = "0";
+    if (currentValueElement.value !== "0") {
+      currentValueElement.value = "0";
+    } else {
+      currentValueElement.value = "0";
+      previousValueElement.textContent = "";
+    }
   }
 
   // -------------------------------------------------------------------
@@ -117,14 +122,11 @@ const initApp = () => {
   function handleOperatorClick(event) {
     const newOperatorInput = event.target.textContent;
     const lastChar = currentValueElement.value.slice(-1);
-    if (
-      lastChar !== "+" &&
-      lastChar !== "-" &&
-      lastChar !== "*" &&
-      lastChar !== "/" &&
-      lastChar !== "."
-    )
-      currentValueElement.value += newOperatorInput;
+    // if lastChar is a symbol, replaces it by newOperatorInput.
+    if (/[+\-*/.]/.test(lastChar)) {
+      currentValueElement.value = currentValueElement.value.slice(0, -1);
+    }
+    currentValueElement.value += newOperatorInput;
   }
 
   // -------------------------------------------------------------------
@@ -144,7 +146,14 @@ const initApp = () => {
 
   // The equals button calculates and displays the result.
   function calculateResult() {
-    const expression = currentValueElement.value;
+    let expression = currentValueElement.value;
+
+    // If lastChar is a symbol, removes it before calculations.
+    const lastChar = expression.slice(-1);
+    if (/[+\-*/.]/.test(lastChar)) {
+      expression = expression.slice(0, -1);
+      currentValueElement.value = expression;
+    }
 
     // Checks for division by zero.
     if (expression.includes("/0") || expression.includes("0/")) {
