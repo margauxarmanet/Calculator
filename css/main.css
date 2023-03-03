@@ -70,6 +70,7 @@ body {
 }
 
 .row:nth-child(3) button {
+  font-size: 1rem;
   background-color: rgba(234, 234, 234, 0.95);
 }
 
@@ -110,3 +111,4 @@ button:active {
 .operator {
   font-size: 1.375rem;
 }
+/* Next Improvements : replace visual "/", "*", "." with font awesome icons to display them in the buttons. */

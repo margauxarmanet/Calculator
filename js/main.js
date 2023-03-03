@@ -173,5 +173,4 @@ const initApp = () => {
 // Makes sure the page is fully loaded.
 document.addEventListener("DOMContentLoaded", initApp);
 
-// add keyboard support to readme file on github.
-// replace with icons : visually have font awesome icons but background is the operators: + - * / .
+// Next Improvements : replace visual "/", "*", "." with font awesome icons to display them in currentValueElement.
