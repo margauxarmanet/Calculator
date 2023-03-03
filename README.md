@@ -11,5 +11,5 @@ The interface is user-friendly and visually appealing.
 
 This calculator can be used on desktops, mobile, and tablets.
 
-### Improvements
-When I have time, I will learn to change the appearance of the operators "*", "-", and the dot ".".
+## Future improvements
+When I have time, I will learn to change the appearance of the operators "*", "-", and the dot "." in the results window, and apply the same changes to the buttons.
