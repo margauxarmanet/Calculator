@@ -165,8 +165,9 @@ const initApp = () => {
     /* Using the math.js library :
     It takes the "expression" string and turns it into a math argument */
     const result = math.evaluate(expression); // math.evaluate() is from the js library math.js
-    previousValueElement.textContent = expression + " =";
-    currentValueElement.value = result;
+    const formattedResult = parseFloat(result.toFixed(2)); // allows maximum 2 decimal places.
+    previousValueElement.textContent = formattedResult + " =";
+    currentValueElement.value = formattedResult;
   }
 };
 

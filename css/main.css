@@ -111,4 +111,5 @@ button:active {
 .operator {
   font-size: 1.375rem;
 }
+
 /* Next Improvements : replace visual "/", "*", "." with font awesome icons to display them in the buttons. */
